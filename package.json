@@ -9,6 +9,12 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "auth0-js": "^9.6.1",
+    "auth0-lock": "^11.7.2",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
+    "jwt-decode": "^2.2.0",
+    "mdbootstrap": "^4.5.4",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.16",
     "vue-class-component": "^6.0.0",
@@ -30,9 +36,38 @@
     "ts-jest": "^22.4.6",
     "vue-template-compiler": "^2.5.16"
   },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.vue$": "vue-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "testMatch": [
+      "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+    ]
+  }
 }
