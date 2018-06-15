@@ -15,6 +15,7 @@
       "node",
       "jest"
     ],
+
     "paths": {
       "@/*": [
         "src/*"
@@ -36,5 +37,8 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "files": [
+    "types/vuenut.d.ts"
   ]
 }
