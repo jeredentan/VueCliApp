@@ -1,6 +1,6 @@
 
-<!-- <template>
-  <section class="section">    
+<<template>
+  <!-- <section class="section">    
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
           <h3 class="title has-text-grey">Register</h3>
@@ -37,7 +37,7 @@
                   <input class="input is-large" type="text" placeholder="Location" v-model="user.location">
                 </div>
               </div>  
-              <Spinner v-bind:show="isBusy" />
+            
               <button class="button is-block is-info is-large is-fullwidth" type="submit">Submit</button>
               <div class="errors-container" v-if="errors">
                  {{errors}}
@@ -49,17 +49,63 @@
           </p>        
         </div>
       </div>   
-  </section>
+  </section> -->
+
+  <section class="section" >
+      <div class="container py-5 my-5">
+          <div class="row">
+              <div class="col-md-12">        
+                  <div class="row">
+                      <div class="col-md-5 mx-auto">
+                          <div class="card rounded-0">
+                          
+                              <div class="card-header">
+                                  <h3 class="mb-0">Register</h3>
+                              </div>
+                              <div class="card-body">
+                                <form class="form" role="form" autocomplete="off"  @submit.prevent="handleSubmit">
+                                      <div class="form-group">
+                                          <label for="uname1">First name</label>
+                                          <input type="text" class="form-control form-control-lg rounded-0" name="uname1" v-model="user.firstName" required="">
+                                          <div class="invalid-feedback">Oops, you missed this one.</div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label>Last name</label>
+                                          <input type="text" class="form-control form-control-lg rounded-0"  v-model="user.lastName" required="" >
+                                          <div class="invalid-feedback">Oops, you missed this one.</div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label>Email</label>
+                                          <input type="email" class="form-control form-control-lg rounded-0"  v-model="user.Email" required="" >
+                                          <div class="invalid-feedback">Oops, you missed this one.</div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label>Password</label>
+                                          <input type="password" class="form-control form-control-lg rounded-0"  v-model="user.password" required="" autocomplete="new-password">
+                                          <div class="invalid-feedback">Enter your password too!</div>
+                                      </div>
+                                      <button type="submit" class="btn btn-success btn-lg float-right">Sign in</button>
+                                  <!-- <router-link to="/register"><button type="submit" class="btn btn-success btn-lg float-right">Sign Up</button></router-link>      -->
+                                  </form>
+                                  <div class="errors-container" v-if="errors">
+                                          {{errors}}
+                                  </div>
+                                </div>        
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section> 
   </template>
 
 <script lang="ts">
-import Spinner from '@/components/Spinner.vue'; // @ is an alias to /src
 import { Component, Vue } from 'vue-property-decorator';
 import { UserRegistration } from '../../models/user.registration.interface';
 import { accountService } from '../../services/account.service';
 @Component({
   components: {
-    Spinner,
   },
 })
 export default class RegistrationForm extends Vue {
@@ -86,4 +132,4 @@ export default class RegistrationForm extends Vue {
 </script>
 
 <style lang="scss" scoped>
-</style> -->
+</style> 

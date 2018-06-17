@@ -39,6 +39,7 @@
     "node_modules"
   ],
   "files": [
-    "types/vuenut.d.ts"
+    "types/vuenut.d.ts",
+    "types/mdbvue.d.ts"
   ]
 }

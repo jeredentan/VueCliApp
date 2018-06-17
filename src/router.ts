@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import About from './views/About.vue';
+import PageRecherche from './views/PageRecherche.vue';
 import NotFoundPage from './views/NotFoundPage.vue';
 import RegistrationForm from './views/account/RegistrationForm.vue';
 import LoginForm from './views/account/LoginForm.vue';
+import Dashboard from './views/Dashboard.vue';
 import store from './store/store';
 
 Vue.use(Router);
@@ -14,8 +14,9 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home,
+      name: 'Dashboard',
+      component: Dashboard,
+
       meta: { requiresAuth: true },
     },
     {
@@ -29,9 +30,15 @@ const router = new Router({
       component: LoginForm,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/recherche',
+      name: 'PageRecherche',
+      component: PageRecherche,
       meta: { requiresAuth: true },
     },
     {
